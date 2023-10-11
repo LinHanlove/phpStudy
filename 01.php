@@ -1,6 +1,83 @@
 <?php
 echo "Hello World!";
 
+/**连等赋值*/
+$a = $b = 1;
+echo $a;
+
+$arr = [1,12]; 
+echo '数组->',$arr[0],'<br>';
+
+
+// 深拷贝
+$deep1 = 2;
+$deep2 = &$deep1;
+echo '深拷贝前->',$deep1,$deep2,'<br>';
+$deep1 = 3;
+echo '深拷贝后->',$deep1,$deep2,'<br>';
+
+// 可变变量
+$notion = 'hello';
+$$notion = 'linhansong.top';
+echo '可变变量',$notion,'<br>';
+echo '可变变量',$hello,'<br>';
+
+// 超全局变量
+
+
+var_dump($_GET);//接受地址栏传参
+
+echo '<br>';
+// 使用global将局部变量传递到函数作用域
+
+$name = 'linhansong';
+
+function getName (){
+  global $name;
+  echo $name ,'使用global将局部变量传递到函数作用域','<br>' ;
+  echo $GLOBALS['name'],'使用GLOBALS','<br>';
+}
+getName();
+
+
+/**
+ * var_dump 检测变量类型
+ * isset 检查变量是否定义
+ * unset 删除变量
+ * empty 检查变量是否为空
+ * 函数体内unset不了global导入的全局变量
+ */
+
+ var_dump(isset($ed));
+
+
+//  静态变量
+
+function make()  {
+  // 加上static关键字，函数调用后，静态变量不会被销毁,意味着该语句只在第一次被执行
+  // 在函数体内做数据持久化
+   
+ static $num = 1;
+  $num = $num +2;
+  return '<br>'. $num.'<hr/>';
+};
+
+echo make();//此时无论函数调用多少次，num都时从初始值计算
+echo make();
+echo make();
+
+// 八进制转十进制函数
+echo octdec(777);
+// 十六进制转十进制函数
+echo hexdec(777);
+
+$flag = false;
+if(!$flag){
+  echo '<br>'.'flag为假'.'<br>';
+}
+
+echo "hello {$a}";
+
 
 /**
 * 常量 define  
