@@ -1,0 +1,1 @@
+a:4:{s:4:"HOOT";s:9:"localHost";s:4:"poRT";s:4:"3306";s:4:"User";s:4:"ROot";s:5:"cache";a:2:{s:4:"type";s:4:"FIle";s:3:"txt";a:3:{i:0;s:3:"JPG";i:1;s:3:"png";i:2;s:4:"Jpeg";}}}
